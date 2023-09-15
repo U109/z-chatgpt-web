@@ -28,18 +28,19 @@
       <div class="chatText">
         <div v-for="(item, index) in 100" :key="index">
           <div class="item-answer" v-if="index % 2 === 0">
-            <div class="answer">
 
+            <div class="answer">
               <div class="answer-avatar">
                 <img src="../assets/images/chatLogo.jpg" alt="" />
               </div>
-              <div class="answer-content">
-                <text>你好，我是ChatGPT，使用3.5模型。请问需要什么帮助？你好，我是ChatGPT，使用3.5模型。请问需要什么帮助？
-                  你好，我是ChatGPT，使用3.5模型。请问需要什么帮助？你好，我是ChatGPT，使用3.5模型。请问需要什么帮助？
-                  你好，我是ChatGPT，使用3.5模型。请问需要什么帮助？你好，我是ChatGPT，使用3.5模型。请问需要什么帮助？
-                  你好，我是ChatGPT，使用3.5模型。请问需要什么帮助？你好，我是ChatGPT，使用3.5模型。请问需要什么帮助？
-                  你好，我是ChatGPT，使用3.5模型。请问需要什么帮助？你好，我是ChatGPT，使用3.5模型。请问需要什么帮助？
-                </text>
+              <div class="answer-content-all">
+                <div class="answer-refresh">
+                  <img src="../assets/images/refresh.png" alt="" />
+                </div>
+                <div class="answer-content">
+                  <text>你好，我是ChatGPT，使用3.5模型。</text>
+                </div>
+                <div class="answer-time"><span>2023/9/15 23:21:34</span></div>
               </div>
 
             </div>
@@ -47,19 +48,29 @@
           </div>
           <div class="item-question" v-else>
             <div class="question">
-              <text>你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？
-                你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？
-                你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？
-                你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？你是谁？
+              <text>在java中断点续传，大文件的分片信息可以存储到Map中吗
               </text>
             </div>
           </div>
         </div>
       </div>
       <div class="chatEdit">
-        <div class="charTool"></div>
+        <div class="chatTool">
+          <div class="chatTool-one">
+            <img src="../assets/images/setup.png" alt="" />
+          </div>
+<!--          <div class="chatTool-two">-->
+<!--            <img src="../assets/images/setup.png" alt="" />-->
+<!--          </div>-->
+<!--          <div class="chatTool-three">-->
+<!--            <img src="../assets/images/setup.png" alt="" />-->
+<!--          </div>-->
+<!--          <div class="chatTool-four">-->
+<!--            <img src="../assets/images/setup.png" alt="" />-->
+<!--          </div>-->
+        </div>
         <div class="chatInput">
-          <div class="chatInputBox"></div>
+          <textarea class="chatInputText" placeholder="Ctrl + Enter 发送，/ 触发补全" rows="3"></textarea>
         </div>
       </div>
     </div>
@@ -202,7 +213,7 @@ export default defineComponent({
     border-color: #e86dbd;
 
     .chatText {
-      height: 70%;
+      height: 78%;
       width: 100%;
       border-style: solid;
       border-width: 1px;
@@ -211,16 +222,20 @@ export default defineComponent({
       overflow-y: scroll;
 
       .item-answer {
-        margin-bottom: 5px;
+        margin-top: 50px;
+        //padding-top: 14px;
 
         .answer {
           display: flex;
           text-align: left;
 
           .answer-avatar {
+            margin-left: 20px;
             max-width: 50px;
+            margin-right: 5px;
 
             img {
+              margin-top: 15px;
               width: 30px;
               height: 30px;
               border-radius: 50%;
@@ -228,34 +243,70 @@ export default defineComponent({
             }
           }
 
-          .answer-content {
+          .answer-content-all {
             max-width: 70%;
-            border-width: 1px;
-            border-style: solid;
-            border-color: #0a30ec;
-            color: #0e0e0e;
 
-            text {
-              font-size: 15px;
+            .answer-refresh {
+              text-align: right;
+              img {
+                width: 14px;
+                height: 14px;
+              }
             }
+            .answer-content {
+              border-style: solid;
+              border-width: 1px;
+              border-color: #dddddd;
+              color: #0e0e0e;
+              border-top-right-radius: 10px; /* 右上角圆角 */
+              border-bottom-right-radius: 10px; /* 右下角圆角 */
+              border-bottom-left-radius: 10px; /* 左下角圆角 */
+              padding: 8px;
+              background-color: #f0f0f0;
+              box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
+
+              text {
+                font-size: 15px;
+                line-height: 25px;
+              }
+            }
+
+            .answer-time {
+              text-align: right;
+              color: #aaa;
+              padding-top: 5px;
+              font-size: 12px;
+            }
+
           }
+
 
         }
       }
 
       .item-question {
-        text-align: left;
+        display: flex;
+        margin-bottom: 40px;
+        margin-top: 50px;
+        margin-right: 10px;
 
         .question {
-          margin: 0 0 0 auto;
+          text-align: end;
           border-style: solid;
           border-width: 1px;
-          border-color: #f5d8a7;
-          //float: right;
+          border-color: #dddddd;
+          margin: 0 10px 0 auto;
           max-width: 70%;
+          border-top-right-radius: 10px; /* 右上角圆角 */
+          border-top-left-radius: 10px; /* 右下角圆角 */
+          border-bottom-left-radius: 10px; /* 左下角圆角 */
+          padding: 8px;
+          background-color: #f0f0f0;
+          box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
 
           text {
             font-size: 15px;
+            line-height: 25px;
           }
         }
 
@@ -263,47 +314,103 @@ export default defineComponent({
     }
 
     .chatEdit {
-      height: 30%;
-      width: 100%;
-      border-style: solid;
-      border-width: 1px;
-      border-color: #f5d8a7;
-
-      .charTool {
-        height: 15%;
+      padding: 10px 20px 20px;
+      .chatTool {
+        display: flex;
         width: 100%;
-        border-style: solid;
-        border-width: 1px;
-        border-color: #f5d8a7;
+
+        .chatTool-one {
+          display: flex;
+          border-style: solid;
+          border-width: 1px;
+          border-color: #dddddd;
+          border-radius: 20px;
+          align-items: center;
+          transition: all .3s ease;
+          margin-bottom: 10px;
+          box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
+
+          img {
+            align-items: center;
+            padding: 4px 10px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        //.chatTool-two {
+        //  margin-top: 3px;
+        //  margin-left: 10px;
+        //  margin-right: 10px;
+        //  display: flex;
+        //  img {
+        //    width: 35px;
+        //    height: 35px;
+        //  }
+        //}
+        //
+        //.chatTool-three {
+        //  margin-top: 3px;
+        //  margin-left: 10px;
+        //  margin-right: 10px;
+        //  display: flex;
+        //  img {
+        //    width: 35px;
+        //    height: 35px;
+        //  }
+        //}
+        //
+        //.chatTool-four {
+        //  margin-top: 3px;
+        //  margin-left: 10px;
+        //  margin-right: 10px;
+        //  display: flex;
+        //  img {
+        //    width: 35px;
+        //    height: 35px;
+        //  }
+        //}
       }
 
       .chatInput {
-        height: 85%;
-        width: 100%;
-        border-style: solid;
-        border-width: 1px;
-        border-color: #798059;
-        position: relative;
 
-        .chatInputBox {
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          right: 0;
-          margin: auto;
-          height: 80%;
-          width: 98%;
-          border-style: solid;
-          border-width: 1px;
-          border-color: #86fdb3;
+        .chatInputText {
+          height: 100%;
+          width: 100%;
+          border-radius: 10px;
+          box-shadow: 0 -2px 5px rgba(0,0,0,.03);
+          //background-color: var(--white);
+          color: #0e0e0e;
+          font-family: inherit;
+          font-size: 16px;
+          padding: 10px 90px 10px 14px;
+          resize: none;
+          outline: none;
+          min-height: 100px;
         }
       }
     }
   }
 
   .chatText::-webkit-scrollbar {
-    display: none;
+    //display: none;
+    width: 6px;
   }
+
+  .chatText::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(238, 233, 233, 0.16);
+    background: rgba(168, 165, 165, 0.76);
+  }
+
+  .chatTool-one:hover {
+    background-color: #e3e7e5;
+  }
+
+  //.chatText::-webkit-scrollbar-track {
+  //  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  //  border-radius: 10px;
+  //  background: #EDEDED;
+  //}
 }
 </style>

@@ -17,10 +17,10 @@
           </div>
           <div class="item-message">
             <div class="message-title">
-              <span>聊天主题 ：{{index}}</span>
+              <span>聊天主题 ：{{ index }}</span>
             </div>
             <div class="message-content">
-              <span>总共 {{index}} 条对话</span>
+              <span>总共 {{ index }} 条对话</span>
             </div>
           </div>
           <div class="item-time">
@@ -42,9 +42,9 @@ export default defineComponent({
   name: "ChatList",
   data() {
     return {
-      chatText: "hello world",
+      chatText: "hello world"
     };
-  },
+  }
 });
 </script>
 <style lang="less" scoped>
@@ -83,10 +83,13 @@ export default defineComponent({
       width: 94%;
       margin-left: 10px;
       margin-top: 5px;
-      background-color: darkgray;
+      background-color: #ececed;
       border-radius: 10px;
       align-items: center;
       display: flex;
+      border-color: #dddddd;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
+
       img {
         width: 30px;
         height: 30px;
@@ -133,8 +136,8 @@ export default defineComponent({
         align-items: center;
 
         img {
-          width: 46px;
-          height: 46px;
+          width: 44px;
+          height: 44px;
           border-radius: 50%;
         }
       }
@@ -156,9 +159,9 @@ export default defineComponent({
           width: 100%;
           font-size: 15px;
           font-weight: 600;
-          overflow:hidden;  /*超出的部分隐藏起来。*/
-          white-space:nowrap;  /*不显示的地方用省略号...代替*/
-          text-overflow:ellipsis;  /* 支持 IE */
+          overflow: hidden; /*超出的部分隐藏起来。*/
+          white-space: nowrap; /*不显示的地方用省略号...代替*/
+          text-overflow: ellipsis; /* 支持 IE */
         }
 
         .message-content {
@@ -168,9 +171,9 @@ export default defineComponent({
           width: 100%;
           font-size: 12px;
           color: darkgray;
-          overflow:hidden;  /*超出的部分隐藏起来。*/
-          white-space:nowrap;  /*不显示的地方用省略号...代替*/
-          text-overflow:ellipsis;  /* 支持 IE */
+          overflow: hidden; /*超出的部分隐藏起来。*/
+          white-space: nowrap; /*不显示的地方用省略号...代替*/
+          text-overflow: ellipsis; /* 支持 IE */
         }
       }
 
@@ -198,7 +201,7 @@ export default defineComponent({
             width: 20px;
             height: 20px;
             display: flex;
-            transition: transform 0.3s ease;
+            //transition: transform 0.3s ease;
           }
         }
       }
@@ -208,20 +211,14 @@ export default defineComponent({
       background-color: #d2e087;
     }
 
-    .item:hover .delete{
+    .item:hover .delete {
       transform: translateX(-47px);
       transition: transform 0.3s ease; /* 过渡持续时间为0.5秒，缓动函数为ease */
     }
   }
 
   .list::-webkit-scrollbar {
-    //display: none;
+    display: none;
   }
-  .list::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-    background: #535353;
-  }
-
 }
 </style>

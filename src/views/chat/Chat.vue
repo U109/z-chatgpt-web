@@ -63,7 +63,7 @@ export default defineComponent({
   .chat-body {
     flex: 1;
     height: 100%;
-    background-color: rgba(210, 204, 204, 0.2);
+    background-color: rgb(253, 253, 253);
     overflow-y: hidden;
     position: relative;
   }
