@@ -3,8 +3,17 @@
     <div class="logo">
       <img src="../assets/images/chatLogo.jpg" alt="" />
     </div>
-    <div class="operate"></div>
-    <div class="setUp"></div>
+    <div class="operate">
+      <div class="operate-one">
+        <img src="../assets/images/message.png" alt="" />
+      </div>
+      <hr>
+    </div>
+    <div class="setUp">
+      <div class="setUp-one">
+        <img src="../assets/images/setup.png" alt="" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -41,6 +50,20 @@ export default defineComponent({
     border-style: solid;
     border-width: 1px;
     border-color: #e86dbd;
+
+    .operate-one {
+      height: 50px;
+      margin-top: 5px;
+      background-color: #50918a;
+      margin-bottom: 5px;
+      img {
+        width: 40px;
+        height: 40px;
+        margin-top: 5px;
+        //background-size: cover;
+        //background-repeat: no-repeat center;
+      }
+    }
   }
 
   .setUp {
@@ -49,6 +72,14 @@ export default defineComponent({
     border-style: solid;
     border-width: 1px;
     border-color: #e86dbd;
+
+    .setUp-one {
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
   }
 }
 

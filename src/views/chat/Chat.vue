@@ -55,7 +55,7 @@ export default defineComponent({
     border-style: solid;
     border-width: 1px;
     border-color: rebeccapurple;
-    width: 300px;
+    width: 320px;
     height: 100%;
     //background-color: rgb(0, 0, 0, 0.3);
   }
