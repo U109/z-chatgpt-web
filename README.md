@@ -21,6 +21,4 @@ npm run serve
 ```
 ## 项目截图
 
-![image](https://gitee.com/zhangzhongzhen/z-chatgpt-web/tree/master/src/assets/images/dev_1.0.png)
-
 ![image](src/assets/images/dev_1.0.png)
