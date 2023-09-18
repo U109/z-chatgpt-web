@@ -5,7 +5,7 @@ chatgpt-web-vue3使用vue3的脚手架创建开发，使用使用typescript编�
 ## 项目介绍
 用于ChatGPT套壳项目的开发创建，代码集思广益，不断优化，不断迭代。
 
-此项目是chatgpt-web-vue3是web端的master分支，主分支，项目稳定的开发分支。
+此项目是chatgpt-web-vue3是web端的dev_2.0分支，主要完成对静态页面的美化。
 
 后端服务移步[z-chatgpt-data](https://gitee.com/zhangzhongzhen/z-chatgpt-data)
 
