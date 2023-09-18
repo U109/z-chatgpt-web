@@ -61,11 +61,20 @@
     </div>
     <div class="chatEdit">
       <div class="chatTool">
-        <div class="chatTool-one">
-          <img src="../assets/images/setup.png" alt="" />
+        <div class="chatTool-div">
+          <button class="chatTool-div-button">
+            <div class="chatTool-div-button-div">
+              <img class="edit" src="../assets/images/edit.png" alt="" />
+            </div>
+          </button>
+
         </div>
-        <div class="chatTool-one">
-          <img src="../assets/images/setup.png" alt="" />
+        <div class="chatTool-div">
+          <button class="chatTool-div-button">
+            <div class="chatTool-div-button-div">
+              <img class="edit" src="../assets/images/edit.png" alt="" />
+            </div>
+          </button>
         </div>
       </div>
       <div class="chatInput">
@@ -307,7 +316,7 @@ export default defineComponent({
       display: flex;
       flex-wrap: wrap;
 
-      .chatTool-one {
+      .chatTool-div {
         margin-right: 5px;
         display: flex;
         border-style: solid;
@@ -318,6 +327,38 @@ export default defineComponent({
         transition: all .3s ease;
         margin-bottom: 10px;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+
+        .chatTool-div-button {
+          border: 1px solid #dedede;;
+          background-color: #fff;;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px;
+          cursor: pointer;
+          transition: all .3s ease;
+          overflow: hidden;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+          outline: none;
+          color: #303030;
+
+          .chatTool-div-button-div {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .edit {
+              width: 16px;
+              height: 16px;
+              //display: flex;
+            }
+          }
+        }
 
         img {
           align-items: center;
@@ -400,7 +441,7 @@ export default defineComponent({
     background: rgba(168, 165, 165, 0.76);
   }
 
-  .chatTool-one:hover {
+  .chatTool-div:hover {
     background-color: #e3e7e5;
   }
 
