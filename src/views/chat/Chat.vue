@@ -43,8 +43,6 @@ export default defineComponent({
 
   .chat-leftSidebar {
     display: flex;
-    flex-direction: column;
-    //border-style: solid;
     border-width: 1px;
     border-color: rebeccapurple;
     width: 75px;
@@ -55,17 +53,15 @@ export default defineComponent({
     border-style: solid;
     border-width: 1px;
     border-color: rebeccapurple;
-    width: 320px;
+    width: 280px;
     height: 100%;
-    //background-color: rgb(0, 0, 0, 0.3);
   }
 
   .chat-body {
-    flex: 1;
+    width: calc(100% - 355px);
     height: 100%;
-    background-color: rgb(253, 253, 253);
-    overflow-y: hidden;
-    position: relative;
+    display: flex;
+    flex-direction: column;
   }
 }
 
